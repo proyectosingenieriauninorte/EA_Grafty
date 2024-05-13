@@ -1,0 +1,264 @@
+/* Estilos básicos del cuerpo, aplicados globalmente */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Mejor control de padding y borders */
+}
+
+/* Estilos para la sección interactiva */
+#sec-interactive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+#sec-interactive .u-text-1 {
+    text-align: center;
+    /* Alinea el texto al centro */
+    width: 100%;
+    /* Asegura que el elemento de texto ocupe todo el ancho disponible */
+    margin-top: 20px;
+    /* Espacio superior para mejor visualización */
+    margin-bottom: 20px;
+    /* Espacio inferior para separar del contenido siguiente */
+    font-size: 50px;
+    /* Ajusta el tamaño del texto según necesidad */
+    color: #333;
+    /* Color del texto, ajusta según tu paleta de colores */
+}
+
+
+
+/* Estilos para el canvas adaptativo */
+#sec-interactive canvas {
+    width: 100%;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    max-width: 1200px;
+    height: auto;
+    /* Esto mantiene el aspect ratio */
+    aspect-ratio: 4 / 3;
+    margin-bottom: 20px;
+    /* Espacio entre el canvas y los controles */
+}
+
+.interactive-controls {
+    width: 100%;
+    max-width: 1200px;
+    /* Limita el ancho para alinearlo con el canvas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centra los controles bajo el canvas */
+}
+
+/* Estilos para controles como botones e inputs dentro de la sección */
+#sec-interactive button,
+#sec-interactive input[type="number"],
+#sec-interactive input[type="checkbox"] {
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    margin: 10px 5px;
+    /* Espaciado alrededor de los controles */
+    cursor: pointer;
+    /* Cursor de mano para botones */
+}
+
+#sec-interactive button {
+    background-color: #13218d;
+    /* Color azul suave */
+    color: white;
+    transition: background-color 0.3s;
+    /* Transición suave para hover */
+}
+
+#sec-interactive button:hover {
+    background-color: #2196F3;
+    /* Azul más oscuro para el estado hover */
+}
+
+#sec-interactive input[type="checkbox"] {
+    transform: scale(1.2);
+    /* Ligeramente más grande para mejor interacción */
+}
+
+#sec-interactive label, #sec-interactive span {
+    font-size: 16px;
+    /* Tamaño uniforme de fuente para etiquetas y spans */
+    display: block;
+    /* Asegura que cada control esté en su propia línea */
+}
+
+#sec-interactive .switch-container {
+    display: flex;
+    align-items: center;
+    /* Alinea verticalmente el switch y el texto */
+    margin-bottom: 20px;
+    /* Espacio debajo del switch */
+}
+
+#sec-interactive .switch-label {
+    margin-left: 10px;
+    /* Espacio entre el switch y el texto */
+    font-size: 16px;
+    /* Tamaño de la fuente */
+    color: #333;
+    /* Color del texto */
+    margin-top: 25px;
+}
+
+#sec-interactive .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 0;
+    /* Elimina cualquier margen por defecto */
+    margin-top: 25px;
+}
+
+#sec-interactive .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+#sec-interactive .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    /* Círculo completo */
+}
+
+#sec-interactive input:checked+.slider {
+    background-color: #8d1313;
+    /* Azul brillante cuando está activo */
+}
+
+#sec-interactive input:checked+.slider:before {
+    transform: translateX(26px);
+    /* Mueve el slider a la derecha cuando está activo */
+}
+
+.matrix {
+    width: 100%;
+    max-width: 800px;
+    /* Ajusta al tamaño deseado */
+    margin: 20px auto;
+    /* Centrado y con espacio */
+    overflow-x: auto;
+    /* Permite desplazamiento horizontal en dispositivos pequeños */
+}
+
+.matrix table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Elimina el espacio entre bordes */
+    font-family: 'Open Sans', sans-serif;
+    /* Fuente legible y moderna */
+}
+
+.matrix th,
+.matrix td {
+    padding: 8px 15px;
+    /* Espaciado interno adecuado */
+    text-align: center;
+    /* Alineación del texto */
+    border: 1px solid #ccc;
+    /* Bordes sutiles */
+    background-color: #f9f9f9;
+    /* Fondo claro para la legibilidad */
+}
+
+.matrix th {
+    font-weight: bold;
+    /* Texto en negrita para encabezados */
+    background-color: #8d1313;
+    color: #fff;
+    gap: 10px;
+    border: #c4c5cc 2px solid;
+}
+
+.matrix tr:nth-child(even) {
+    background-color: #f2f2f2;
+    /* Alternar colores para filas */
+}
+
+.matrix tr:hover {
+    background-color: #e8e8e8;
+    /* Efecto hover para filas */
+}
+
+/* Estilos para la tabla de Dijkstra */
+#dijkstra-steps {
+    width: 100%;
+    max-width: 600px;
+    /* Ajusta según las necesidades de diseño */
+    margin: 20px auto;
+    /* Centra la tabla horizontalmente y añade espacio vertical */
+    border-collapse: collapse;
+    /* Elimina el espacio entre las celdas */
+    overflow-x: auto;
+    /* Permite desplazamiento horizontal en dispositivos pequeños */
+}
+
+#dijkstra-steps table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Elimina el espacio entre bordes */
+    font-family: 'Open Sans', sans-serif;
+    /* Fuente legible y moderna */
+}
+
+#dijkstra-steps th,
+#dijkstra-steps td {
+    border: 1px solid #ccc;
+    /* Borde gris claro para celdas */
+    padding: 8px;
+    /* Espaciado interno en las celdas */
+    text-align: center;
+    /* Alineación del texto al centro */
+    background-color: #f9f9f9;
+    /* Fondo claro para la legibilidad */
+}
+
+#dijkstra-steps th {
+    font-weight: bold;
+    /* Texto en negrita para encabezados */
+    background-color: #8d1313;
+    color: #fff;
+    gap: 10px;
+    border: #c4c5cc 2px solid;
+}
+
+#dijkstra-steps tr:nth-child(odd) {
+    background-color: #f8f9fa;
+    /* Fondo gris claro para filas impares */
+}
+
+#dijkstra-steps tr:nth-child(even) {
+    background-color: #e9ecef;
+    /* Fondo gris más oscuro para filas pares */
+}
