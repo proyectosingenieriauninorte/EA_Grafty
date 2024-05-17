@@ -49,10 +49,7 @@ cd EA_Grafty
 Asegúrate de tener Docker instalado y ejecutando en tu sistema.
 
 ```
-docker build -t ea_grafty .
-```
-```
-docker run -p 3000:3000 ea_grafty
+docker-compose up --build
 ```
 Accede a la aplicación a través de `http://localhost:3000` en tu navegador.
 
