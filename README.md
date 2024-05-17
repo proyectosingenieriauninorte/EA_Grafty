@@ -10,7 +10,7 @@
   </h4>
 
 [![GitHub Slrosales](https://img.shields.io/badge/by-Slrosales-purple)](https://github.com/Slrosales)
-[![GitHub Rubens1414](https://img.shields.io/badge/by-Rubens1414-red)](https://github.com/Rubens1414)
+[![GitHub Rubens1414](https://img.shields.io/badge/by-Rubens1414-blue)](https://github.com/Rubens1414)
 [![GitHub JaymedDLC](https://img.shields.io/badge/by-JaymedDLC-green)](https://github.com/JaymedDLC)
 [![GitHub Almor21](https://img.shields.io/badge/by-wilsone24-orange)](https://github.com/wilsone24)
 
