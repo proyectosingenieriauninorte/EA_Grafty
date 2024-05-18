@@ -3,7 +3,7 @@
     EA Grafty - Todo es un grafo
   </h1>
 
-<img src="public/assets/images/EAGRAFTY.png" alt="Logo de EA Grafty" width="250"/>
+<img src="app/public/assets/images/EAGRAFTY.png" alt="Logo de EA Grafty" width="250"/>
 
 <h4>
     Aprende los distintos algoritmos interactuando con grafos
