@@ -1,5 +1,4 @@
 version: '3.9'
-
 services:
   app:
     build:
@@ -7,6 +6,4 @@ services:
       dockerfile: dockerfile
     container_name: ea_grafty_container
     ports:
-      - "3001:3000"  # Mapea el puerto 3000 del host al puerto 3000 del contenedor
-    volumes:
-      - .:/app  # Mapea el directorio actual al directorio de trabajo dentro del contenedor
+      - "3000:3000" 
