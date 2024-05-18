@@ -48,9 +48,20 @@ cd EA_Grafty
 ### Ejecución con Docker
 Asegúrate de tener Docker instalado y ejecutando en tu sistema.
 
+- Este comando es para construir la imagen con Docker Compose e iniciar el `http://localhost:3000`
 ```
 docker-compose up --build
 ```
+
+- Si la imagen ya esta construida solo ejecuta:
+```
+docker-compose up
+```
+- Si deseas ejecutar los contenedores en segundo plano:
+```
+docker-compose up -d
+```
+
 Accede a la aplicación a través de `http://localhost:3000` en tu navegador.
 
 ### Ejecución sin Docker
