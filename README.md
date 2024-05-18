@@ -65,6 +65,7 @@ docker-compose up -d
 Accede a la aplicación a través de `http://localhost:3000` en tu navegador.
 
 ### Ejecución sin Docker
+Ve a la carpeta `app` y ejecuta:
 
 ```
 npm install
