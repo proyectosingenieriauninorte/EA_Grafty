@@ -1,194 +1,137 @@
 <!DOCTYPE html>
 <html style="font-size: 16px" lang="es">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <title>Grafo</title>
-    <link rel="stylesheet" href="../css/ncp_smp.css" media="screen" />
-    <link rel="stylesheet" href="../css/Grafo.css" media="screen" />
-    <link
-      id="u-theme-google-font"
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i"
-    />
-  </head>
 
-  <body
-    data-path-to-root="../"
-    data-include-products="false"
-    class="u-body u-xl-mode"
-  >
-    <header class="u-clearfix u-grey-80 u-header u-header" id="sec-c25f">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <a
-          href="../index.html"
-          class="u-image u-logo u-image-1"
-          data-image-width="154"
-          data-image-height="65"
-        >
-          <img
-            src="../assets/images/EAGRAFTY.png"
-            class="u-logo-image u-logo-image-1"
-          />
-        </a>
-        <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
-          <div
-            class="menu-collapse"
-            style="font-size: 1rem; letter-spacing: 0px"
-          ></div>
-          <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-unstyled u-nav-1 nav-list">
-              <li class="u-nav-item">
-                <a
-                  class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                  href="../index.html"
-                  style="padding: 10px 20px"
-                  >Inicio</a
-                >
-              </li>
-              <li class="u-nav-item">
-                <a
-                  class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                  href="Concepto.html"
-                  style="padding: 10px 20px"
-                  >Concepto</a
-                >
-              </li>
-              <li class="u-nav-item">
-                <a
-                  class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                  href="Dijkstra.html"
-                  style="padding: 10px 20px"
-                  >Dijkstra</a
-                >
-              </li>
-              <li class="u-nav-item">
-                <a
-                  class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                  href="Floyd-Warshall.html"
-                  style="padding: 10px 20px"
-                  >Floyd Warshall</a
-                >
-              </li>
-              <li class="u-nav-item">
-                <a
-                  class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                  href="MST.html"
-                  style="padding: 10px 20px"
-                  >MST</a
-                >
-              </li>
-              <li class="u-nav-item">
-                <a
-                  class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                  href="Grafo.html"
-                  style="padding: 10px 20px"
-                  >Interactivo</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="u-custom-menu u-nav-container-collapse">
-            <div
-              class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav"
-            >
-              <div class="u-inner-container-layout u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                <ul
-                  class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"
-                >
-                  <li class="u-nav-item">
-                    <a class="u-button-style u-nav-link" href="../index.html"
-                      >Inicio</a
-                    >
-                  </li>
-                  <li class="u-nav-item">
-                    <a class="u-button-style u-nav-link" href="Concepto.html"
-                      >Concepto</a
-                    >
-                  </li>
-                  <li class="u-nav-item">
-                    <a class="u-button-style u-nav-link" href="Dijkstra.html"
-                      >Dijkstra</a
-                    >
-                  </li>
-                  <li class="u-nav-item">
-                    <a
-                      class="u-button-style u-nav-link"
-                      href="Floyd-Warshall.html"
-                      >Floyd Warshall</a
-                    >
-                  </li>
-                  <li class="u-nav-item">
-                    <a class="u-button-style u-nav-link" href="MST.html">MST</a>
-                  </li>
-                </ul>
-              </div>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <title>Grafo</title>
+  <link rel="stylesheet" href="../css/ncp_smp.css" media="screen" />
+  <link rel="stylesheet" href="../css/Grafo.css" media="screen" />
+  <link id="u-theme-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i" />
+</head>
+
+<body data-path-to-root="../" data-include-products="false" class="u-body u-xl-mode">
+  <header class="u-clearfix u-grey-80 u-header u-header" id="sec-c25f">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <a href="../index.html" class="u-image u-logo u-image-1" data-image-width="154" data-image-height="65">
+        <img src="../assets/images/EAGRAFTY.png" class="u-logo-image u-logo-image-1" />
+      </a>
+      <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
+        <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px"></div>
+        <div class="u-custom-menu u-nav-container">
+          <ul class="u-nav u-unstyled u-nav-1 nav-list">
+            <li class="u-nav-item">
+              <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="../index.html" style="padding: 10px 20px">Inicio</a>
+            </li>
+            <li class="u-nav-item">
+              <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="Concepto.html" style="padding: 10px 20px">Concepto</a>
+            </li>
+            <li class="u-nav-item">
+              <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="Dijkstra.html" style="padding: 10px 20px">Dijkstra</a>
+            </li>
+            <li class="u-nav-item">
+              <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="Floyd-Warshall.html" style="padding: 10px 20px">Floyd Warshall</a>
+            </li>
+            <li class="u-nav-item">
+              <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="MST.html" style="padding: 10px 20px">MST</a>
+            </li>
+            <li class="u-nav-item">
+              <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="Grafo.html" style="padding: 10px 20px">Interactivo</a>
+            </li>
+          </ul>
+        </div>
+        <div class="u-custom-menu u-nav-container-collapse">
+          <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+            <div class="u-inner-container-layout u-sidenav-overflow">
+              <div class="u-menu-close"></div>
+              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                <li class="u-nav-item">
+                  <a class="u-button-style u-nav-link" href="../index.html">Inicio</a>
+                </li>
+                <li class="u-nav-item">
+                  <a class="u-button-style u-nav-link" href="Concepto.html">Concepto</a>
+                </li>
+                <li class="u-nav-item">
+                  <a class="u-button-style u-nav-link" href="Dijkstra.html">Dijkstra</a>
+                </li>
+                <li class="u-nav-item">
+                  <a class="u-button-style u-nav-link" href="Floyd-Warshall.html">Floyd Warshall</a>
+                </li>
+                <li class="u-nav-item">
+                  <a class="u-button-style u-nav-link" href="MST.html">MST</a>
+                </li>
+              </ul>
             </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
-        </nav>
-      </div>
-    </header>
+          <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-    <section class="u-clearfix u-section-2" id="sec-interactive">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-font u-text-1">
-          Grafo Interactivo
-        </h2>
-      </div>
-      <canvas id="canvas" width="800" height="600"></canvas>
-      <div id="costo-total-container">
-        <span id="costo-total">Costo total del grafo: 0</span>
-      </div>
-      <div id="grado-grafo-container">
-        <span id="grado-grafo">Grado del grafo: 0</span>
-      </div>
-      <div class="switch-container">
-        <label class="switch">
-          <input type="checkbox" id="delete-mode-toggle" />
-          <span class="slider round"></span>
-        </label>
-        <span class="switch-label">Modo eliminar Nodo</span>
-      </div>
+  <section class="u-clearfix u-section-2" id="sec-interactive">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <h2 class="u-align-center u-text u-text-default u-text-font u-text-1">
+        Grafo Interactivo
+      </h2>
+    </div>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <div class="switch-container">
+      <label class="switch">
+        <input type="checkbox" id="directed-mode-toggle" />
+        <span class="slider round"></span>
+      </label>
+      <span class="switch-label">Modo Grafo Dirigido</span>
+    </div>
+    <div id="costo-total-container">
+      <span id="costo-total">Costo total del grafo: 0</span>
+    </div>
 
-      <div>
-        <input type="number" id="start-node-delete" placeholder="Nodo inicio" />
-        <input type="number" id="end-node-delete" placeholder="Nodo destino" />
-        <button id="execute-delete">Eliminar Arista</button>
-      </div>
+    <div id="grado-grafo-container">
+      <span id="grado-grafo">Grado del grafo: 0</span>
+    </div>
+    <div class="switch-container">
+      <label class="switch">
+        <input type="checkbox" id="delete-mode-toggle" />
+        <span class="slider round"></span>
+      </label>
+      <span class="switch-label">Modo eliminar Nodo</span>
+    </div>
 
-      <div id="mst-container">
-        <input type="number" id="start-node" placeholder="Nodo de inicio" />
-        <button id="calculate-mst">Calcular MST</button>
-      </div>
-      <div>
-        <input
-          type="number"
-          id="start-node-dijkstra"
-          placeholder="Nodo inicio"
-        />
-        <input
-          type="number"
-          id="end-node-dijkstra"
-          placeholder="Nodo destino"
-        />
-        <button id="execute-dijkstra">Ejecutar Dijkstra</button>
-      </div>
-      <div id="dijkstra-steps"></div>
-      <div>
-        <button id="runFloyd">Ejecutar Floyd-Warshall</button>
-      </div>
-      <div id="cost-matrix" class="matrix"></div>
-      <div id="path-matrix" class="matrix"></div>
-      <script type="module" src="../js/main.js"></script>
-    </section>
+    <div>
+      <input type="number" id="start-node-delete" placeholder="Nodo inicio" />
+      <input type="number" id="end-node-delete" placeholder="Nodo destino" />
+      <button id="execute-delete">Eliminar Arista</button>
+    </div>
 
-    <footer
-      class="u-align-center u-clearfix u-footer u-grey-80 u-footer"
-      id="sec-04fc"
-    >
-      <div class="u-clearfix u-sheet u-sheet-1"></div>
-    </footer>
-  </body>
+    <div id="mst-container">
+      <input type="number" id="start-node" placeholder="Nodo de inicio" />
+      <button id="calculate-mst">Calcular MST</button>
+    </div>
+    <div>
+      <input type="number" id="start-node-dijkstra" placeholder="Nodo inicio" />
+      <input type="number" id="end-node-dijkstra" placeholder="Nodo destino" />
+      <button id="execute-dijkstra">Ejecutar Dijkstra</button>
+    </div>
+    <div id="dijkstra-steps"></div>
+    <div>
+      <button id="runFloyd">Ejecutar Floyd-Warshall</button>
+    </div>
+    <div id="cost-matrix" class="matrix"></div>
+    <div id="path-matrix" class="matrix"></div>
+    <script type="module" src="../js/main.js"></script>
+  </section>
+
+  <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-04fc">
+    <div class="u-clearfix u-sheet u-sheet-1"></div>
+  </footer>
+</body>
+
 </html>

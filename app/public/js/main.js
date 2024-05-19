@@ -19,15 +19,41 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", resizeCanvas);
   resizeCanvas(); // Inicializa el tamaño del canvas al cargar
 
+  const modeToggle = document.getElementById("directed-mode-toggle");
+  modeToggle.addEventListener("change", () => {
+    if (
+      confirm(
+        "Cambiar de modo eliminará todos los nodos y aristas actuales. ¿Desea continuar?"
+      )
+    ) {
+      grafo = new Grafo(); // Reinicia el grafo
+      grafo.dirigido = modeToggle.checked; // Verifica si el modo Dirigido esta activado
+      updateCanvas(); // Redibuja el canvas vacío
+    } else {
+      modeToggle.checked = !modeToggle.checked; // Revierte el cambio de checkbox si el usuario cancela
+    }
+  });
+
   // Redibuja todos los elementos del grafo
   function updateCanvas() {
     limpiarCanvas(ctx, canvas.width, canvas.height);
     grafo.nodos.forEach((nodo) => {
       pintarNodo(ctx, nodo.x, nodo.y, nodo.id, "blue");
       nodo.vecinos.forEach((peso, vecino) => {
-        pintarArista(ctx, nodo.x, nodo.y, vecino.x, vecino.y, peso, "black");
+        pintarArista(
+          ctx,
+          nodo.x,
+          nodo.y,
+          vecino.x,
+          vecino.y,
+          peso,
+          "black",
+          false,
+          grafo.dirigido
+        );
       });
     });
+
     mostrarGradoGrafo(); // Actualiza el grado del grafo
     mostrarCostoTotal(); // Actualiza el costo total del grafo
   }
@@ -40,7 +66,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (deleteMode) {
       const nodo = grafo.encontrarNodoPorPosicion(x, y);
       if (nodo) {
-        grafo.eliminarNodo(nodo.id);
+        if (grafo.dirigido) {
+          grafo.eliminarNodoDirigido(nodo.id);
+        } else {
+          grafo.eliminarNodo(nodo.id);
+        }
         updateCanvas();
       }
     } else {

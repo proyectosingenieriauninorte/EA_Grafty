@@ -81,32 +81,51 @@ export function executeDijkstra(
   distances.set(startNodeId, 0);
 
   while (nodes.size) {
-    let closestNode = [...nodes].reduce((minNode, nodeId) =>
-      distances.get(nodeId) < distances.get(minNode) ? nodeId : minNode
+    let currentNode = [...nodes].reduce(
+      (minNode, nodeId) =>
+        minNode === null || distances.get(nodeId) < distances.get(minNode)
+          ? nodeId
+          : minNode,
+      null
     );
 
-    nodes.delete(closestNode);
-    if (closestNode === endNodeId) break;
-
-    const currentNode = grafo.nodos.find((n) => n.id === closestNode);
-    for (let [neighbour, weight] of currentNode.vecinos) {
-      let distance = distances.get(currentNode.id) + weight;
-      if (distance < distances.get(neighbour.id)) {
-        distances.set(neighbour.id, distance);
-        previous.set(neighbour.id, currentNode.id);
-      }
+    if (currentNode === null || distances.get(currentNode) === Infinity) {
+      alert(
+        "No hay ruta disponible desde el nodo " +
+          startNodeId +
+          " al nodo " +
+          endNodeId
+      );
+      return;
     }
+
+    nodes.delete(currentNode);
+
+    if (currentNode === endNodeId) {
+      break;
+    }
+
+    const currentNodeObj = grafo.nodos.find((n) => n.id === currentNode);
+    currentNodeObj.vecinos.forEach((weight, neighbour) => {
+      let alt = distances.get(currentNode) + weight;
+      if (alt < distances.get(neighbour.id)) {
+        distances.set(neighbour.id, alt);
+        previous.set(neighbour.id, currentNode);
+      }
+    });
 
     // Registrar los pasos para visualización
     steps.push({
-      node: closestNode,
+      node: currentNode,
       distances: new Map(distances),
       previous: new Map(previous),
     });
   }
 
-  // Llamada a una función que mostrará los pasos
-  displayDijkstraSteps(steps);
+  // Llamada a una función que mostrará los pasos solo si hay un camino
+  if (distances.get(endNodeId) !== Infinity) {
+    displayDijkstraSteps(steps);
+  }
 
   // Reconstruir y pintar el camino
   let path = [];
@@ -118,42 +137,42 @@ export function executeDijkstra(
     path.unshift(current);
   }
 
-  for (let i = 0; i < path.length - 1; i++) {
-    const fromNode = grafo.nodos.find((n) => n.id === path[i]);
-    const toNode = grafo.nodos.find((n) => n.id === path[i + 1]);
-    pintarArista(
-      ctx,
-      fromNode.x,
-      fromNode.y,
-      toNode.x,
-      toNode.y,
-      fromNode.vecinos.get(toNode),
-      "orange",
-      true
-    );
+  if (path.length > 1) {
+    for (let i = 0; i < path.length - 1; i++) {
+      const fromNode = grafo.nodos.find((n) => n.id === path[i]);
+      const toNode = grafo.nodos.find((n) => n.id === path[i + 1]);
+      pintarArista(
+        ctx,
+        fromNode.x,
+        fromNode.y,
+        toNode.x,
+        toNode.y,
+        fromNode.vecinos.get(toNode),
+        "orange",
+        true
+      );
+    }
   }
 }
 
 function displayDijkstraSteps(steps) {
   let html = `<table>
-                    <tr>
-                      <th>Iteración</th>
-                      <th>Nodo</th>
-                      <th>Distancias</th>
-                      <th>Predecesores</th>
-                    </tr>`;
+                <tr>
+                  <th>Iteración</th>
+                  <th>Nodo</th>
+                  <th>Distancias</th>
+                  <th>Predecesores</th>
+                </tr>`;
 
   steps.forEach((step, index) => {
     html += `<tr>
-                   <td>${index + 1}</td>
-                   <td>${step.node}</td>
-                   <td>`;
-    // Mejora en la visualización de distancias
+               <td>${index + 1}</td>
+               <td>${step.node}</td>
+               <td>`;
     step.distances.forEach((dist, node) => {
       html += `${node}: ${dist === Infinity ? "∞" : dist}<br>`;
     });
     html += `</td><td>`;
-    // Mejora en la visualización de predecesores
     step.previous.forEach((pred, node) => {
       html += `${node}: ${pred !== undefined ? pred : "-"}<br>`;
     });
@@ -161,7 +180,7 @@ function displayDijkstraSteps(steps) {
   });
 
   html += "</table>";
-  document.getElementById("dijkstra-steps").innerHTML = html; // Asegúrate de tener un contenedor con este ID
+  document.getElementById("dijkstra-steps").innerHTML = html;
 }
 
 export function floydWarshall(grafo) {
