@@ -75,6 +75,12 @@ npm start
 ```
 Accede a la aplicación a través de `http://localhost:3000` en tu navegador.
 
+- **Reposicionamiento de un nodo**
+  - Permitir al usuario cambiar la posición de cualquier nodo del grafo dentro del lienzo, manteniendo todas las aristas conectadas.
+
+- **Lienzo personalizable**
+  - Permitir al usuario subir una imagen (o seleccionar imágenes disponibles en la página) para cambiar el fondo del lienzo y ejemplificar así algunos usos de los grafos, como en mapas para rutas aéreas, redes de comunicación, entre otros.
+
 ## Team
 
 -   Laura Gómez (Líder)
