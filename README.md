@@ -16,8 +16,10 @@
 
 </div>
 
-## Descripción
-EA Grafty es una aplicación web interactiva diseñada para visualizar y entender los algoritmos de grafos más comunes de una manera teórica e interactiva. La aplicación está dividida en varias zonas, cada una dedicada a un aspecto particular de los algoritmos de grafos.
+## Descripción y Justificación de la Herramienta
+EA Grafty es una aplicación web interactiva diseñada para proporcionar una comprensión teórica e interactiva de los algoritmos de grafos más comunes. La herramienta ofrece explicaciones detalladas sobre diferentes algoritmos de grafos y en qué áreas son comúnmente utilizados. Además, proporciona visualizaciones interactivas del algoritmo de Prim, herramientas para entender el cálculo de la ruta más corta con el algoritmo de Dijkstra, y visualizaciones de matrices de recorrido y costo con el algoritmo de Floyd-Warshall. También cuenta con una zona interactiva que permite a los usuarios interactuar y modificar grafos en tiempo real.
+
+Esta herramienta es invaluable para estudiantes y profesionales que deseen comprender mejor los algoritmos de grafos y su aplicación en diversos campos como la informática, las redes de comunicación, la logística y más.
 
 ## Características
 - **Teoría**: Explicaciones detalladas sobre diferentes algoritmos de grafos y en que áreas son bastantes vistos.
