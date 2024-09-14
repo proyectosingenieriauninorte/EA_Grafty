@@ -23,4 +23,4 @@ jobs:
           docker stop grafty-app
           docker rm grafty-app
           docker build -t grafty .
-          docker run -dit -p 5016:3000 --restart unless-stopped --name grafty-app netmand
+          docker run -dit -p 5016:3000 --restart unless-stopped --name grafty-app grafty
