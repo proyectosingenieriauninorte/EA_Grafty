@@ -6,4 +6,4 @@ services:
       dockerfile: dockerfile
     container_name: ea_grafty_container
     ports:
-      - "3000:3000" 
+      - "5016:3000" 

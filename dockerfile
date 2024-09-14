@@ -13,7 +13,7 @@ RUN npm install
 # Copiar todos los archivos del proyecto al directorio de trabajo
 COPY app/ ./
 
-EXPOSE 3000
+EXPOSE 5016
 
 # Comando para ejecutar la aplicación con nodemon
 CMD ["npm", "start"]
