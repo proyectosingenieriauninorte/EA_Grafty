@@ -1,0 +1,26 @@
+name: Deploy Server
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:       
+    - name: Deploy using ssh
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: 22
+        script: |
+          cd /home/proyecto/Netmand/
+          git pull origin main
+          git status
+          docker stop grafty-app
+          docker rm grafty-app
+          docker build -t grafty .
+          docker run -dit -p 5016:3000 --restart unless-stopped --name grafty-app netmand
