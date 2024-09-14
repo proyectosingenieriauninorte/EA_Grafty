@@ -20,7 +20,7 @@ jobs:
           cd /home/proyecto/EA_Grafty/
           git pull origin main
           git status
-          docker stop grafty-app
-          docker rm grafty-app
+          docker stop ea_grafty_container
+          docker rm ea_grafty_container
           docker build -t grafty .
-          docker run -dit -p 5016:3000 --restart unless-stopped --name grafty-app grafty
+          docker run -dit -p 5016:3000 --restart unless-stopped --name ea_grafty_container grafty
